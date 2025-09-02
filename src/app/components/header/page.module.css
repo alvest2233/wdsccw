@@ -12,10 +12,13 @@
   align-items: center;
 }
 
+
+
 .navLinks {
   display: flex;
   gap: 30px;
   margin-right: 20px;
+  align-items: center;
 }
 
 .logoImgLink {
@@ -23,11 +26,11 @@
 }
 
 .links {
-  text-decoration: none;
+  text-decoration: none !important;
   color: white;
   font-size: 1.5rem;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 700;
   letter-spacing: 0.0375rem;
 }
 
@@ -40,7 +43,7 @@
 .dropdown .dropBtn {
   font-size: 1.5rem;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 700;
   letter-spacing: 0.0375rem;
   border: none;
   outline: none;
@@ -51,38 +54,94 @@
   position: relative;
 }
 
+.dropdown .dropBtn .arrow {
+  color: #ff8d3d;
+  margin-left: 5px;
+}
+
 .dropMenu {
   display: none;
   position: absolute;
-  background-color: White;
+  background-color: white;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
   top: 50%;
   left: 50%;
   transform: translate(-50%, 15%);
+  border-radius: 4px;
+  overflow: hidden;
 }
 
 .dropMenu a {
   float: none;
-  color: #000;
+  color: #A0A0A0;
   padding: 12px 16px;
-  text-decoration: none;
+  text-decoration: none !important;
   display: block;
   text-align: center;
   font-size: 1rem;
   font-style: normal;
   font-weight: 400;
   letter-spacing: 0.0375rem;
+  transition: all 0.2s ease;
 }
+
+
 
 .dropdown:hover .dropMenu {
   display: block;
 }
 
-.links:hover,
+.dropMenu a:hover {
+  background-color: #4796E3;
+  color: white;
+}
+
+/* Add inset divider line between dropdown items */
+.dropMenu a + a {
+  position: relative;
+}
+.dropMenu a + a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 15%;
+  right: 15%;
+  height: 1px;
+  background: #CDCDCD;
+}
+
+.links:hover {
+  color: #4796E3;
+}
+
 .dropBtn:hover {
-  color: #f60;
+  color: #4796E3;
+}
+
+/* Donate button styling */
+.donateButton {
+  background-color: #FF8D3D;
+  color: white;
+  padding: 8px 20px;
+  border-radius: 6px;
+  text-decoration: none !important;
+  font-weight: 700;
+  font-size: 1.2rem;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 36px;
+  line-height: 1;
+}
+
+.donateButton:hover {
+  background-color: #e67e2e;
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(255, 141, 61, 0.3);
 }
 
 .hamburger {
@@ -132,7 +191,7 @@
   margin: 1rem 0;
   font-size: 1.2rem;
   color: white;
-  text-decoration: none;
+  text-decoration: none !important;
 }
 .sidebarOverlay {
   display: none;
@@ -171,10 +230,12 @@
 
   .dropdown .dropBtn {
     font-size: 18px;
+    font-weight: 700;
   }
 
   .links {
     font-size: 18px;
+    font-weight: 700;
   }
 }
 
@@ -190,10 +251,12 @@
 
   .dropdown .dropBtn {
     font-size: 14px;
+    font-weight: 700;
   }
 
   .links {
     font-size: 14px;
+    font-weight: 700;
   }
 }
 
@@ -209,10 +272,12 @@
 
   .dropdown .dropBtn {
     font-size: 12px;
+    font-weight: 700;
   }
 
   .links {
     font-size: 12px;
+    font-weight: 700;
   }
 
   .wrapper {
@@ -254,10 +319,12 @@
 
   .dropdown .dropBtn {
     font-size: 10px;
+    font-weight: 700;
   }
 
   .links {
     font-size: 10px;
+    font-weight: 700;
   }
 
   .wrapper {

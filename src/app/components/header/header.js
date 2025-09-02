@@ -64,7 +64,7 @@ const Navbar = () => {
             Ward 13
           </a>
           <div className={styles.dropdown}>
-            <button className={styles.dropBtn}>About Me▾</button>
+            <button className={styles.dropBtn}>About Me<span className={styles.arrow}>▾</span></button>
             <div className={styles.dropMenu}>
               <a href="/my-message" className={styles.links}>
                 My Message
@@ -75,7 +75,7 @@ const Navbar = () => {
             </div>
           </div>
           <div className={styles.dropdown}>
-            <button className={styles.dropBtn}>Join▾</button>
+            <button className={styles.dropBtn}>Join<span className={styles.arrow}>▾</span></button>
             <div className={styles.dropMenu}>
               <a href="/volunteer" className={styles.links}>
                 Volunteer
@@ -90,6 +90,9 @@ const Navbar = () => {
           </a>
           <a href="/videos" className={styles.links}>
             Videos
+          </a>
+          <a href="/donate" className={styles.donateButton}>
+            DONATE
           </a>
         </div>
       </nav>

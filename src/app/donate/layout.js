@@ -1,0 +1,10 @@
+import Header from "../components/header/header";
+import Footer from "../components/footer/footer";
+
+export default function DonateLayout({ children }) {
+  return (
+    <>
+      <main>{children}</main>
+    </>
+  );
+}
