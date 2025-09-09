@@ -14,8 +14,11 @@ export default function aboutMeTopHero() {
       <div className={styles.aboutMeTopHeroDescriptionContainer}>
         <p className={styles.aboutMeTopHeroDescription}>
           "I am honoured to have been elected and entrusted to serve my first
+          <br />
           term as a City Councillor representing Ward 13. I live in the ward, in
+          <br />
           Oxford Park, with my daughter and Claire, and I enjoy spending time
+          <br />
           with my family, friends, and serving members of our community."
         </p>
       </div>

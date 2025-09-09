@@ -59,12 +59,13 @@ AboutMeTopHeader.js
 }
 
 .aboutMeTopHeroDescription {
-  font-size: medium;
-  font-weight: medium;
+  font-size: 40px;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 55px;
+  letter-spacing: 4%;
   text-align: center;
-  width: 85%;
-  font-size: 30px;
-  letter-spacing: 1.6px;
+  width: 90%;
 }
 
 @media only screen and (min-width: 475px) and (max-width: 650px) {
@@ -73,7 +74,9 @@ AboutMeTopHeader.js
   }
 
   .aboutMeTopHeroDescription {
-    font-size: 25px;
+    font-size: 33px;
+    line-height: 45px;
+    letter-spacing: 4%;
   }
 }
 
@@ -93,7 +96,9 @@ AboutMeTopHeader.js
   }
 
   .aboutMeTopHeroDescription {
-    font-size: 20px;
+    font-size: 27px;
+    line-height: 37px;
+    letter-spacing: 4%;
   }
 }
 
