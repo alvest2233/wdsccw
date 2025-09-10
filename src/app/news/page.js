@@ -58,12 +58,25 @@ export default function News() {
     const month = date.getMonth();
     const year = date.getFullYear();
 
-    if (month >= 8 && month <= 10) return `Fall ${year}`;
-    if (month >= 5 && month <= 7) return `Summer ${year}`;
-    if (month >= 2 && month <= 4) return `Spring ${year}`;
-    if (month === 11 || month <= 1) return `Winter ${year}`;
+    // Handle 2025 seasons
+    if (year === 2025) {
+      if (month >= 8 && month <= 10) return `Fall 2025`;
+      if (month >= 5 && month <= 7) return `Summer 2025`;
+      if (month >= 2 && month <= 4) return `Spring 2025`;
+      if (month === 11 || month <= 1) return `Winter 2025`;
+    }
+    
+    // Handle 2024 (all content grouped by year)
+    if (year === 2024) return `2024`;
+    
+    // Handle previous years
+    if (year === 2023) return `2023`;
+    if (year === 2022) return `2022`;
+    
+    // For older years, group them as "2022"
+    if (year < 2022) return `2022`;
 
-    return "Previous Years";
+    return "2022"; // Default fallback
   };
 
   const toggleFilter = (filter) => {
@@ -127,11 +140,12 @@ export default function News() {
         <div className={styles.filterContainer}>
           <h2 className={styles.filterHeader}>Filter</h2>
           {[
-            "Fall 2024",
-            "Summer 2024",
-            "Spring 2024",
-            "Winter 2024",
-            "Previous Years",
+            "Fall 2025",
+            "Summer 2025",
+            "Spring 2025",
+            "Winter 2025",
+            "2024",
+            "2023",
           ].map((filter) => (
             <div
               key={filter}
@@ -177,7 +191,10 @@ export default function News() {
               {error ? (
                 <p>Error loading newsletters. Please try again later.</p>
               ) : loading ? (
-                <p>Loading...</p>
+                <div className={styles.loadingContainer}>
+                  <div className={styles.loadingText}>Loading...</div>
+                  <div className={styles.loadingSpinner}></div>
+                </div>
               ) : filteredItems.length > 0 ? (
                 filteredItems.map((item, index) => (
                   <div
