@@ -8,7 +8,36 @@ import dropDownText from "./dropDownText";
 import LatestNews from "./LatestNews.jsx";
 import { useState, useEffect } from "react";
 import RSSParser from "rss-parser";
+import DOMPurify from "dompurify";
 
+
+// HTML stripping function using DOMPurify
+const stripHtmlAndDecode = (htmlString) => {
+  if (!htmlString) return '';
+  
+  // Use DOMPurify to sanitize and strip HTML
+  const cleanHtml = DOMPurify.sanitize(htmlString, { 
+    ALLOWED_TAGS: [], // Remove all HTML tags
+    ALLOWED_ATTR: []  // Remove all attributes
+  });
+  
+  // Decode HTML entities
+  const textarea = document.createElement('textarea');
+  textarea.innerHTML = cleanHtml;
+  const decoded = textarea.value;
+  
+  // Clean up extra whitespace
+  let cleaned = decoded.replace(/\s+/g, ' ').trim();
+  
+  // Remove the standard newsletter greeting
+  cleaned = cleaned.replace(/Welcome to the the City of London: Ward 13 [A-Za-z]+ \d{4} Newsletter\.?\s*Hello <<First Name>>\.?\s*/gi, '');
+  
+  // Remove any remaining generic greetings
+  cleaned = cleaned.replace(/Hello <<First Name>>\.?\s*/gi, '');
+  cleaned = cleaned.replace(/Welcome to the [^.]*Newsletter\.?\s*/gi, '');
+  
+  return cleaned.trim();
+};
 
 export default function Home() {
    const [newsItems, setNewsItems] = useState([]);
@@ -40,11 +69,10 @@ export default function Home() {
               title: item.title,
               link: item.link,
               pubDate: item.pubDate,
-              description: item.content || item.contentSnippet || "",
-              
+              description: stripHtmlAndDecode(item.content || item.contentSnippet || ""),
             }))
             .sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
-  
+
           setNewsItems(items);
           setFilteredItems(items);
           

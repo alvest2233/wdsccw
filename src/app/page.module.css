@@ -686,7 +686,7 @@ Latest News Component
 
 .latestNewsText {
   color: #3780c5;
-  margin: 0px;
+  margin: 10px 0px 0px 0px;
 }
 
 @media only screen and (max-width: 900px) and (min-width: 700px) {
