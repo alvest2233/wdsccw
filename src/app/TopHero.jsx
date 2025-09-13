@@ -50,25 +50,29 @@ export default function TopHero() {
           className={`${styles.linkButtons} ${styles.donateButton}`}
         >
           <div className={styles.linkButtonText}>
-            <svg
-              className={styles.topHeroSvgs}
-              viewBox="0 0 50 50"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M25 8.33333C25 12.0152 21.0152 16 17.3333 16C13.6515 16 9.66667 12.0152 9.66667 8.33333C9.66667 4.65152 13.6515 0.666667 17.3333 0.666667C21.0152 0.666667 25 4.65152 25 8.33333Z"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M25 16.6667V25M17.3333 16.6667V25M17.3333 25H33M17.3333 33.3333H33"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
+          <svg
+  className={styles.topHeroSvgs}
+  viewBox="0 0 55 55"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <line 
+    x1="25" 
+    y1="2" 
+    x2="25" 
+    y2="48" 
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+  />
+  <path 
+    d="M35.4 10.4H19.8a7.3 7.3 0 0 0 0 14.6h10.4a7.3 7.3 0 0 1 0 14.6H12.5"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  />
+</svg>
             <p>DONATE</p>
           </div>
         </Link>

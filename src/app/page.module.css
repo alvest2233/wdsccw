@@ -47,10 +47,10 @@
 .topBannerContainer {
   display: grid;
   grid-area: banner;
-  background-size: cover;
+  background-size: 100%;
   background-repeat: no-repeat;
-  background-position: top right;
-  background-image: url("./../../public/davidexpandedagain.jpg");
+  background-position: top center;
+  background-image: url("./../../public/davidexpandedagain2.jpg?v=2");
 }
 
 .bannerText {

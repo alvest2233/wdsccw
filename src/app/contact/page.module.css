@@ -5,7 +5,7 @@
 .input,
 .textarea,
 .button {
-    font-family: Arial, sans-serif;
+    font-family: "Bricolage Grotesque", Arial, sans-serif;
 }
 
 /* Updated form container with background image */
@@ -34,8 +34,10 @@
 }
 
 .label {
-    font-size: 14px;
-    font-weight: 600;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: "Bricolage Grotesque Bold", Arial, sans-serif;
+    color: #013567;
     margin-bottom: 8px;
     display: block;
 }
@@ -47,7 +49,9 @@
     margin-bottom: 16px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    font-size: 14px;
+    font-size: 16px;
+    font-family: "Bricolage Grotesque", Arial, sans-serif;
+    color: #013567;
     box-sizing: border-box;
 }
 
@@ -64,6 +68,8 @@
     border-radius: 4px;
     width: 100%;
     font-size: 16px;
+    font-family: "Bricolage Grotesque Bold", Arial, sans-serif;
+    font-weight: bold;
     cursor: pointer;
 }
 
